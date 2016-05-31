@@ -22,12 +22,12 @@ function loadData() {
 
     // YOUR CODE GOES HERE!
 	//create variable for full address
-	var streetviewUrl = 'http://maps.googleapis.com/maps/api/streetview?size=600x400&location='+address+'';
+	var streetviewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=600x400&location='+address+'';
 	//append streetview image to the body
 	$body.append('<img class="bgimg" src="' + streetviewUrl + '">');
 	
 	//Make ajax request to get json data from new york time api
-	var nytimeUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + cityStr + '&sort=newest&api-key=373c813ae10640a7aa125757e6e3dae7'
+	var nytimeUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + cityStr + '&sort=newest&api-key=373c813ae10640a7aa125757e6e3dae7'
 	$.getJSON(nytimeUrl, function(data){
 		$nytHeaderElem.text('New York Times Articles About ' + cityStr);
 		
